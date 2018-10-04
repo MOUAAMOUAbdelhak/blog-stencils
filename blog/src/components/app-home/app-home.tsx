@@ -17,12 +17,20 @@ export class AppHome {
       });
 
   }
+  trim(namenul:string){
+    if(namenul==null){
+      return"chaine vide";
+    }
+  else{
+    return namenul.substring(0,80);
+  }
+    
+  }
   render() {
 
-
-        return (
-
-          <div class= "table-responsive">
+ 
+            return (
+               <div class= "table-responsive">
          {this.name.map(
              (article) =>
             <div class="row">
@@ -30,7 +38,8 @@ export class AppHome {
                   <div class="card blue-grey darken-1">
                     <div class="card-content white-text">
                       <span class="card-title">{article.title}</span>
-                      <p>{article.article.substring(0, 50)}...</p>
+                   
+                      <p>{this.trim(article.article)}...</p>
                     </div>
                     <span class="white-text">&nbsp;&nbsp;&nbsp;&nbsp; Realized by : {article.autor} at {article.creationDate}
                    </span>
@@ -43,13 +52,43 @@ export class AppHome {
               </div>
       )}
        </div>
+            );
+          
+        /*  else{
+
+            return (
+              <div class= "table-responsive">
+        {this.name.map(
+            (article) =>
+           <div class="row">
+               <div class="col s12 m6">
+                 <div class="card blue-grey darken-1">
+                   <div class="card-content white-text">
+                     <span class="card-title">{article.title}</span>
+                     
+                     <p>{article.article.substring(0, 50)}...</p>
+                   </div>
+                   <span class="white-text">&nbsp;&nbsp;&nbsp;&nbsp; Realized by : {article.autor} at {article.creationDate}
+                  </span>
+                   <div class="card-action">
+                   <stencil-route-link url={`/profile/${article._id}`}>MORE</stencil-route-link>
+
+                   </div>
+                 </div>
+               </div>
+             </div>
+     )}
+      </div>
+           );
+          }
+*/        
+         
 
 
 
 
 
 
-        );
     }
 
   }

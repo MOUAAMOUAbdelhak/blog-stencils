@@ -1,4 +1,7 @@
-.app-profile {
-    padding: 10px;
-  }
-  
+@import "../../../node_modules/materialize-css/dist/css/materialize.css";
+.alin{
+  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}

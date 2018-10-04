@@ -12,6 +12,7 @@
   "dependencies": {
     "@stencil/core": "~0.13.2",
     "@stencil/router": "~0.3.0",
+    "bulma": "^0.7.1",
     "materialize": "^1.0.0",
     "materialize-css": "^1.0.0-rc.2"
   },

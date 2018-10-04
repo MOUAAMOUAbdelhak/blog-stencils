@@ -24,6 +24,16 @@ componentWillLoad() {
   });
 
 }
+trim(namenul:string){
+  if(namenul==null){
+    return"chaine vide";
+  }
+else{
+  return namenul;
+}
+  
+}
+  
 
   normalize(name: string): string {
     if (name) {
@@ -35,7 +45,7 @@ componentWillLoad() {
   render() {
     const data2=this.match.params.name;
    this.nom2 =this.nom.filter(v => v._id === `${data2}`);
-    console.log(this.nom2);
+    //console.log(this.nom2);
 
       return (
         <div class="app-profile">
@@ -49,7 +59,7 @@ componentWillLoad() {
                   <div class="card blue-grey darken-1">
                     <div class="card-content white-text">
                       <span class="card-title">{article.title}</span>
-                      <p>{article.article}</p>
+                      <p>{this.trim(article.article)}</p>
                     </div>
                     <span class="white-text">&nbsp;&nbsp;&nbsp;&nbsp; Realized by : {article.autor} at {article.creationDate}
                    </span>

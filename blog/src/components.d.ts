@@ -16,8 +16,12 @@ import {
 
 export namespace Components {
 
-  interface AppArticle {}
-  interface AppArticleAttributes extends StencilHTMLAttributes {}
+  interface AppArticle {
+    'title': string;
+  }
+  interface AppArticleAttributes extends StencilHTMLAttributes {
+    'title'?: string;
+  }
 
   interface AppHome {}
   interface AppHomeAttributes extends StencilHTMLAttributes {}
