@@ -11,6 +11,7 @@ import '@stencil/router';
 import '@stencil/state-tunnel';
 import {
   MatchResults,
+  RouterHistory,
 } from '@stencil/router';
 
 
@@ -27,10 +28,12 @@ export namespace Components {
   interface AppHomeAttributes extends StencilHTMLAttributes {}
 
   interface AppProfile {
+    'history': RouterHistory;
     'iden': String;
     'match': MatchResults;
   }
   interface AppProfileAttributes extends StencilHTMLAttributes {
+    'history'?: RouterHistory;
     'iden'?: String;
     'match'?: MatchResults;
   }
@@ -44,6 +47,13 @@ export namespace Components {
     'last'?: string;
     'onBackgroundToggle'?: (event: CustomEvent) => void;
   }
+
+  interface EditArticle {
+    'match': MatchResults;
+  }
+  interface EditArticleAttributes extends StencilHTMLAttributes {
+    'match'?: MatchResults;
+  }
 }
 
 declare global {
@@ -52,6 +62,7 @@ declare global {
     'AppHome': Components.AppHome;
     'AppProfile': Components.AppProfile;
     'AppRoot': Components.AppRoot;
+    'EditArticle': Components.EditArticle;
   }
 
   interface StencilIntrinsicElements {
@@ -59,6 +70,7 @@ declare global {
     'app-home': Components.AppHomeAttributes;
     'app-profile': Components.AppProfileAttributes;
     'app-root': Components.AppRootAttributes;
+    'edit-article': Components.EditArticleAttributes;
   }
 
 
@@ -86,11 +98,18 @@ declare global {
     new (): HTMLAppRootElement;
   };
 
+  interface HTMLEditArticleElement extends Components.EditArticle, HTMLStencilElement {}
+  var HTMLEditArticleElement: {
+    prototype: HTMLEditArticleElement;
+    new (): HTMLEditArticleElement;
+  };
+
   interface HTMLElementTagNameMap {
     'app-article': HTMLAppArticleElement
     'app-home': HTMLAppHomeElement
     'app-profile': HTMLAppProfileElement
     'app-root': HTMLAppRootElement
+    'edit-article': HTMLEditArticleElement
   }
 
   interface ElementTagNameMap {
@@ -98,6 +117,7 @@ declare global {
     'app-home': HTMLAppHomeElement;
     'app-profile': HTMLAppProfileElement;
     'app-root': HTMLAppRootElement;
+    'edit-article': HTMLEditArticleElement;
   }
 
 

@@ -17,6 +17,7 @@ export class AppHome {
       });
 
   }
+ 
   trim(namenul:string){
     if(namenul==null){
       return"chaine vide";
@@ -41,10 +42,13 @@ export class AppHome {
                    
                       <p>{this.trim(article.article)}...</p>
                     </div>
-                    <span class="white-text">&nbsp;&nbsp;&nbsp;&nbsp; Realized by : {article.autor} at {article.creationDate}
+                    <span class="white-text">&nbsp;&nbsp;&nbsp;&nbsp; Realized by : {article.autor} le, {article.creationDate}
                    </span>
                     <div class="card-action">
-                    <stencil-route-link url={`/profile/${article._id}`}>MORE</stencil-route-link>
+                    <stencil-route-link url={`/profile/${article._id}`} class="btn waves-effect waves-light">detaille</stencil-route-link>
+                    &nbsp;&nbsp;
+                    <stencil-route-link url={`/edit/${article._id}`} class="btn waves-effect waves-light">Modifier</stencil-route-link>
+                
 
                     </div>
                   </div>

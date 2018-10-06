@@ -59,40 +59,15 @@
               <div class="column is-8 is-centered">
                 <div class="header-content">
                   <div class="has-text-centered">
-                    <h1 class="title">New Artical</h1>
+                    <h1 class="title">Nouveau Artical</h1>
                   </div>
                 </div>
 
-                <div class="subheader-content has-text-centered">
-                  <div class="nav-center">
-                    <a class="nav-item">
-                      <span class="icon">
-                        <i class="fa fa-facebook" />
-                      </span>
-                    </a>
-                    <a class="nav-item">
-                      <span class="icon">
-                        <i class="fa fa-twitter" />
-                      </span>
-                    </a>
-                    <a class="nav-item">
-                      <span class="icon">
-                        <i class="fa fa-instagram" />
-                      </span>
-                    </a>
-                    <a class="nav-item">
-                      <span class="icon">
-                        <i class="fa fa-rss" />
-                      </span>
-                    </a>
-                  </div>
-                  <hr />
-                </div>
 
                 <div class="single-content">
                   <form>
                     <div class="field">
-                      <label class="label">Title</label>
+                      <label class="label">Titre</label>
                       <p class="control">
                         <input
                           class="input"
@@ -117,7 +92,7 @@
                       </p>
                     </div>
                     <div class="field">
-                      <label class="label">Autor</label>
+                      <label class="label">Auteur</label>
                       <p class="control">
                         <input
                           class="input"
@@ -136,20 +111,27 @@
                           class="btn waves-effect waves-light" type="submit" name="action" id="marg"
                           onClick={this.postArticle.bind(this)}
                         >
-                          Add
+                          Ajouter
                           <i class="material-icons right"></i>
                         </button>
-                        &nbsp;&nbsp;&nbsp;
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Cancel</button>
+                       
+                  &nbsp;&nbsp;
+                  <stencil-route-link url="/"  >
+                  <button
+                          class="btn waves-effect waves-light" 
+                        >   Retour
+                        </button>
+
+               </stencil-route-link>
+                
+                  
+               
                       </p>
                     </div>
                   </form>
                 </div>
                 <div class="has-text-right">
-                  <p>
-                  <stencil-route-link url="/">Back to Home</stencil-route-link>
                 
-                  </p>
                 </div>
               </div>
             </div>
